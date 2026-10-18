@@ -1,0 +1,38 @@
+{
+  "name": "@expense/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main",
+    "start:dev": "nest start --watch",
+    "lint": "tsc --noEmit",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@expense/shared": "workspace:*",
+    "@nestjs/common": "^12.1.3",
+    "@nestjs/config": "^12.0.1",
+    "@nestjs/core": "^12.1.3",
+    "@nestjs/cqrs": "^12.1.0",
+    "@nestjs/jwt": "^12.0.3",
+    "@nestjs/platform-express": "^12.1.3",
+    "@prisma/client": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^12.0.8",
+    "@nestjs/schematics": "^12.0.7",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "prisma": "^6.0.0",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "permissions": {
+    "ask": ["Bash(npm run push*)", "Bash(npm run deploy*)"],
+    "deny": ["Read(./.env)", "Read(./.env.local)"]
+  }
+}

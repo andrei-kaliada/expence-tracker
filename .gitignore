@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build output
+dist
+.next
+out
+build
+*.tsbuildinfo
+next-env.d.ts
+
+# Test / coverage
+coverage
+.nyc_output
+
+# Env files (keep *.example)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Prisma
+apps/api/prisma/*.db
+apps/api/prisma/*.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# Vercel / misc
+.vercel
+.turbo
+
+# Claude Code local settings
+.claude/settings.local.json
