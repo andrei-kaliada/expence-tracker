@@ -9,6 +9,7 @@ export class UpdateCategoryCommand {
     public readonly id: string,
     public readonly name?: string,
     public readonly color?: string,
+    public readonly icon?: string,
   ) {}
 }
 
@@ -16,10 +17,10 @@ export class UpdateCategoryCommand {
 export class UpdateCategoryHandler implements ICommandHandler<UpdateCategoryCommand, Category> {
   constructor(private readonly categories: CategoriesRepository) {}
 
-  async execute({ userId, id, name, color }: UpdateCategoryCommand) {
+  async execute({ userId, id, name, color, icon }: UpdateCategoryCommand) {
     if (!(await this.categories.findOwned(id, userId))) {
       throw new NotFoundException('Category not found');
     }
-    return this.categories.update(id, { name, color });
+    return this.categories.update(id, { name, color, icon });
   }
 }

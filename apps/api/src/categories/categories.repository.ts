@@ -20,11 +20,11 @@ export class CategoriesRepository {
     return this.prisma.category.findFirst({ where: { id, userId } });
   }
 
-  create(data: { userId: string; name: string; color?: string }) {
+  create(data: { userId: string; name: string; color?: string; icon?: string }) {
     return this.prisma.category.create({ data });
   }
 
-  update(id: string, data: { name?: string; color?: string }) {
+  update(id: string, data: { name?: string; color?: string; icon?: string }) {
     return this.prisma.category.update({ where: { id }, data });
   }
 

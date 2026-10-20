@@ -45,7 +45,9 @@ export class CategoriesController {
   @Post()
   @UseGuards(JwtAuthGuard)
   create(@CurrentUser() user: AuthUser, @Body() dto: CreateCategoryDto) {
-    return this.commandBus.execute(new CreateCategoryCommand(user.id, dto.name, dto.color));
+    return this.commandBus.execute(
+      new CreateCategoryCommand(user.id, dto.name, dto.color, dto.icon),
+    );
   }
 
   @Patch(':id')
@@ -55,7 +57,9 @@ export class CategoriesController {
     @Param('id', ParseUUIDPipe) id: string,
     @Body() dto: UpdateCategoryDto,
   ) {
-    return this.commandBus.execute(new UpdateCategoryCommand(user.id, id, dto.name, dto.color));
+    return this.commandBus.execute(
+      new UpdateCategoryCommand(user.id, id, dto.name, dto.color, dto.icon),
+    );
   }
 
   @Delete(':id')
